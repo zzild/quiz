@@ -118,16 +118,68 @@ print(Player1,"?")
 Frage51 = input()
 for i in range (1,40):
     print ("don't look")
-Frage52 = (input)
+print("Jetzt",Player2)
+Frage52 = input()
 print("Es gibt aktuell 27 Staffeln der Simpsons")
 Frage511 = int(Frage51) - 27
 Frage521 = int(Frage52) - 27
 antwort51 = int(Frage511) * int(Frage511)
 antwort52 = int(Frage521) * int(Frage521)
-if antwort51 < antwort52
+if antwort51 < antwort52:
     print("Der Punkt geht somit an ",Player1)
     Score1 = Score1 + 1
-if antwort51 > antwort52
+if antwort51 > antwort52:
     print("Der Punkt geht somit an", Player2)
     Score2 = Score2 + 1
-
+if antwort51 == antwort52:
+    print("beide gleich")
+    if Frage51 != 27:
+        print("falsch")
+print("Jetzt zu Frage 6:")
+print("Wie alt werden Katzen durchschnittlich")
+print(Player1,"deine Antwort")
+Frage61 = input()
+for i in range (1,40):
+    print ("don't look")
+Frage62 = input()
+print("Katzen werden durchschnittlich 13 Jahre alt")
+Frage611 = int(Frage61) - 13
+Frage621 = int(Frage62) - 13
+antwort61 = int(Frage611) * int(Frage611)
+antwort62 = int(Frage621) * int(Frage621)
+if antwort61 < antwort62:
+    print("Der Punkt geht an", Player1)
+    Score1 = Score1 + 1
+if antwort61 > antwort62:
+    print("Der Punkt geht an",Player2)
+    Score2 = Score2 + 1
+if antwort61 == antwort62:
+    print("Beide das gleiche.... ....Keine Punkte")
+print("Kommen wir nun zur letzten Frage")
+print("Wie viele Menschen gibt es auf der Welt(genau)")
+print(Player1)
+Frage71 = input()
+for i in range (1,40):
+    print ("don't look")
+print(Player2)
+Frage72 = input()
+print("Es gibt 7446098092 Menschen auf der Welt")
+Frage711 = int(Frage71) - 7446098092
+Frage721 = int(Frage72) - 7446098092
+antwort71 = int(Frage711) * int(Frage711)
+antwort72 = int(Frage721) * int(Frage721)
+if antwort71 < antwort72:
+    print("Punkt fuer", Player1)
+    Score1 = Score1 + 1
+if antwort71 > antwort72:
+    print("Punkt fuer", Player2)
+    Score2 = Score2 + 1
+if antwort71== antwort72:
+    print("Beide gleich")
+print("Das Speil ist beendent")
+if Score1 > Score2:
+    print("Damit gewinnt",Player1,". Herzlichen Glueckwunsch", Player1,"hatte ",Score1,"Punkte und",Player2, Score2,"Punkten")
+if Score1 < Score2:
+    print("Damit gewinnt", Player2, ". Herzlichen Glueckwunsch", Player1, "hatte ", Score1, "Punkte und",Player2, Score2, "Punkten")
+if Score1 == Score2:
+    print("Beide haben gewonnen",Player1,"hatte ",Score1,"Punkte und",Player2, Score2,"Punkten")
