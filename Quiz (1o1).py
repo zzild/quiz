@@ -58,5 +58,24 @@ print("Jetzt", Player2)
 Frage22 = input()
 loesung2 = 315360000
 print("10 Jahre entsprechen 315360000 Sekunden")
-Frage211 = Frage21 - 315360000
-Frage221 = Frage22 - 315360000
+Frage211 = int(Frage21) - 315360000
+Frage221 = int(Frage22) - 315360000
+antwort21 = int(Frage211) * int(Frage211)
+antwort22 = int(Frage221) * int(Frage221)
+if antwort21 < antwort22:
+    print("Damit geht der Punkt an", Player1)
+    Score1 = Score1 + 1
+if antwort21 > antwort22:
+    print ("Damit geht der Punkt an ",Player2)
+    Score2 = Score2 + 1
+if antwort21 == antwort22:
+    print("beide gleich gut. Keine Punkte!")
+print("Die dritte Frage!")
+print("Wie alt ist der aelteste Mensch geworden?")
+print(Player1, "Deine Antwort:")
+Frage31 = input()
+for i in range (1,40):
+    print ("don't look")
+print("Deine Antwort",Player2)
+Frage32 = input()
+print("Die Franzoesin Jeanne Calment ist 122 Jahre alt geworden")
