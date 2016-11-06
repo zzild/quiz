@@ -3,6 +3,8 @@ import sys, select
 
 score = 0
 
+time  = 3000
+
 # liefert zuefaelligen buchstaben zuerueck
 def Random():
     zz = random.randint(97,122)
@@ -41,17 +43,20 @@ def test(buchstabe, antwort):
 # spielt das spiel und veraendert score
 def spiel():
     global score
+    global time
     s = "true"
     print("go go")
 
     print("wenn das wort in der ersten haelfte des alphabetes ist schreibe a wenn nicht dann b")
     while  s == "true":
         zufbu = Random()
-        antwort = input_innerhalb_zeit(4500)
+        antwort = input_innerhalb_zeit(time)
         antwort = test(zufbu, antwort)
         if antwort == "ok":
             s = "true"
             score = score + 1
+            time = time * 0.95
+
         else:
             break
     return
