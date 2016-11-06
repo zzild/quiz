@@ -2,8 +2,8 @@ score = 0
 
 # liefert zuefaelligen buchstaben zuerueck
 def random():
-    print("a")
-    return ("a")
+    print("z")
+    return ("z")
 
 # begruesst den spieler
 def begruessung():
@@ -16,8 +16,13 @@ def input_innerhalb_zeit():
     return input()
 
 #Liefert ok zueruck wenn nicht nichts
-def test(antwort):
-    if antwort == "a":
+def test(buchstabe, antwort):
+    ordnung = int(ord(buchstabe))
+    if ordnung <= 103:
+        loesung = "a"
+    else:
+        loesung = "b"
+    if antwort == loesung:
         antwort = "ok"
     else:
         antwort = ""
@@ -35,7 +40,7 @@ def spiel():
     while  s == "true":
         zufbu = random()
         antwort = input_innerhalb_zeit()
-        antwort = test(antwort)
+        antwort = test(zufbu, antwort)
         if antwort == "ok":
             s = "true"
             score = score + 1
