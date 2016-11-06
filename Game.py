@@ -1,4 +1,5 @@
 import random
+import sys, select
 
 score = 0
 
@@ -16,8 +17,11 @@ def begruessung():
 
 # wartet bis zeit zuende oder eingabe kommt
 # liefert die eingabe oder "nichts" zurueck
-def input_innerhalb_zeit():
-    return input()
+def input_innerhalb_zeit(millisekunden):
+    # alte implementierung:
+    # return input()
+    return input_with_timeout(millisekunden)
+
 
 #Liefert ok zueruck wenn nicht nichts
 def test(buchstabe, antwort):
@@ -43,7 +47,7 @@ def spiel():
     print("wenn das wort in der ersten haelfte des alphabetes ist schreibe a wenn nicht dann b")
     while  s == "true":
         zufbu = Random()
-        antwort = input_innerhalb_zeit()
+        antwort = input_innerhalb_zeit(4500)
         antwort = test(zufbu, antwort)
         if antwort == "ok":
             s = "true"
@@ -56,6 +60,13 @@ def ende():
     print("Punktzahl:" ,score)
     print("bye bye")
     return
+
+
+def input_with_timeout(timeout):
+    ready, _, _ = select.select([sys.stdin], [],[], float(timeout) / 1000)
+    if ready:
+        return sys.stdin.readline().rstrip('\n')
+    return ''
 
 begruessung()
 spiel()
